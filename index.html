@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>FC Barcelona - Més que un club | Official Fan Site</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Official fan site for FC Barcelona - news, history, players, trophies and more about the legendary football club">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        :root {
+            --text-dark: #000000;
+            --text-light: #ffffff;
+        }
+        
+    </style>
+</head>
+<body>
+    <!-- Header with Background Image -->
+    <header>
+        <div class="header-content">
+            <h1>FC BARCELONA</h1>
+            <div class="subtitle">Més que un club • Since 1899</div>
+            <div class="subtitle">Visca Barça! Visca Catalunya!</div>
+        </div>
+    </header>
+    
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="nav-container">
+            <div class="nav-logo-container">
+                <a href="index.html" class="nav-logo-container">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/4/47/FC_Barcelona_%28crest%29.svg/1200px-FC_Barcelona_%28crest%29.svg.png" 
+                         alt="FC Barcelona Logo" 
+                         class="nav-logo">
+                </a>
+                <button class="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            
+            <div class="nav-links" id="navLinks">
+                <a href="index.html" class="active"><i class="fas fa-home"></i> Home</a>
+                <a href="trophycabinet.html"><i class="fas fa-trophy"></i> Trophy Cabinet</a>
+                <a href="support.html"><i class="fas fa-users"></i> Support</a>
+                <a href="academy.html"><i class="fas fa-graduation-cap"></i> Academy</a>
+                <a href="records.html"><i class="fas fa-star"></i> Records</a>
+                <a href="stadium.html"><i class="fas fa-stadium"></i> Stadium</a>
+                <a href="rivalry.html"><i class="fas fa-chess-knight"></i> Rivalry</a>
+                <a href="players.html"><i class="fas fa-user"></i> Players</a>
+                <a href="feedback.html" class="feedback-link"><i class="fas fa-comment-alt"></i> Feedback</a>
+                <a href="login.html" class="login-link"><i class="fas fa-sign-in-alt"></i> Login</a>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main-content">
+        <section id="club-info">
+            <img src="https://upload.wikimedia.org/wikipedia/en/thumb/4/47/FC_Barcelona_%28crest%29.svg/1200px-FC_Barcelona_%28crest%29.svg.png" 
+                 alt="FC Barcelona Crest" 
+                 class="club-crest">
+            
+            <h2>About FC Barcelona</h2>
+            <p><strong>FC Barcelona, affectionately known as Barça, is more than just a football club - it's a symbol of Catalan identity and pride. Founded in 1899 by Swiss businessman Joan Gamper along with a group of football enthusiasts, the club has grown to become one of the most beloved and successful sports institutions in the world.</strong></p>
+            
+            <p><strong>The club's motto "Més que un club" ("More than a club") reflects its deep roots in Catalan culture and its role as an ambassador for the region. Owned by its supporters (socis), Barcelona represents values of democracy, social commitment, and sporting excellence.</strong></p>
+            
+            <p><strong>Barcelona competes in La Liga, Spain's top football division, and has won numerous domestic and international titles, including 5 UEFA Champions League trophies and 27 La Liga championships. The club is renowned for its youth academy, La Masia, which has produced legendary players like Lionel Messi, Xavi, and Andrés Iniesta.</strong></p>
+            
+            <p><strong>Beyond football, FC Barcelona maintains professional teams in basketball, handball, roller hockey, and other sports, all competing under the same colors and values that make the club unique in the world of sports.</strong></p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="social-links">
+            <a href="https://www.facebook.com/fcbarcelona" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="https://twitter.com/FCBarcelona" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com/fcbarcelona/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.youtube.com/fcbarcelona" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        </div>
+        <p>&copy; 2025 FC Barcelona. All rights reserved.</p>
+        <p>Bame Kaosi Mosimakoko</p>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const menuButton = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.getElementById('navLinks');
+        
+        menuButton.addEventListener('click', function() {
+            const expanded = this.getAttribute('aria-expanded') === 'true';
+            this.setAttribute('aria-expanded', !expanded);
+            navLinks.classList.toggle('active');
+        });
+        
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', function() {
+                navLinks.classList.remove('active');
+                menuButton.setAttribute('aria-expanded', 'false');
+            });
+        });
+    </script>
+</body>
+</html>

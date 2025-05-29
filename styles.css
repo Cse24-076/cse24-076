@@ -1,0 +1,750 @@
+    :root {
+            --barca-blue: #004d98;
+            --barca-dark-blue: #002b5c;
+            --barca-red: #a50044;
+            --barca-dark-red: #7a0033;
+            --barca-gold: #ffcc00;
+            --text-dark: #333;
+            --text-light: #f5f5f5;
+            --bg-light: #f8f8f8;
+        }
+        
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                        url('./images/camp-nou.jpeg') no-repeat center center fixed;
+            background-size: cover;
+            color: var(--text-dark);
+            min-height: 100vh;
+        }
+
+        /* Header with Background Image - Reduced Size */
+        header {
+            background: 
+                linear-gradient(135deg, rgba(165, 0, 68, 0.7), rgba(0, 77, 152, 0.7)),
+                url(Images/Team/Team.jpg) no-repeat center center;
+            background-size: cover;
+            color: white;
+            text-align: center;
+            padding: 1.5rem 0 1.8rem;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2rem;
+            font-weight: 800;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            letter-spacing: -1px;
+            position: relative;
+            display: inline-block;
+        }
+
+        h1::after {
+            content: "";
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: var(--barca-gold);
+            border-radius: 2px;
+        }
+
+        .subtitle {
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+            font-weight: 300;
+            letter-spacing: 1px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+        }
+
+        /* Navigation Bar - Reduced Size */
+        nav {
+            background: linear-gradient(135deg, var(--barca-red), var(--barca-blue));
+            padding: 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+            border-bottom: 2px solid var(--barca-gold);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            position: relative;
+            height: 60px;
+        }
+
+        .nav-logo-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-logo {
+            height: 40px;
+            transition: transform 0.3s ease;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+        }
+
+        .nav-logo:hover {
+            transform: scale(1.1);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-container a {
+            color: var(--text-light);
+            text-decoration: none;
+            padding: 0.8rem 1rem;
+            font-weight: 600;
+            font-size: 0.85rem;
+            transition: all 0.3s ease;
+            position: relative;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-container a i {
+            margin-right: 6px;
+            font-size: 0.9rem;
+        }
+
+        .nav-container a::before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background: var(--barca-gold);
+            transition: width 0.3s ease;
+        }
+
+        .nav-container a:hover::before,
+        .nav-container a:focus::before {
+            width: 60%;
+        }
+
+        .nav-container a:hover {
+            color: var(--barca-gold);
+        }
+
+        .nav-container a.active {
+            color: var(--barca-gold);
+        }
+
+        .nav-container a.active::before {
+            width: 60%;
+            background: var(--barca-gold);
+        }
+
+        /* Login link with icon */
+        .login-link {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+            padding: 0.5rem 0.8rem !important;
+            margin-left: 0.5rem;
+            border: 1px solid rgba(255, 204, 0, 0.3);
+        }
+
+        .login-link:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Mobile menu button (hidden by default) */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.3rem;
+            cursor: pointer;
+            padding: 0.8rem;
+        }
+
+        /* Main Content */
+        main {
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+            position: relative;
+        }
+
+        /* Club Info Section */
+        #club-info {
+            background: rgba(255, 255, 255, 0.489);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            position: relative;
+            overflow: hidden;
+        }
+
+        #club-info::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('./Images/Camp-Nou.jpeg') center/cover;
+            opacity: 0.15;
+            z-index: -1;
+            pointer-events: none;
+        }
+        
+        .club-crest {
+            display: block;
+            width: 130px;
+            height: auto;
+            margin: 0 auto 1.5rem;
+        }
+        
+        h2 {
+            color: var(--barca-blue);
+            font-size: 1.8rem;
+            text-align: center;
+            margin-top: 0;
+            margin-bottom: 1.2rem;
+        }
+        
+        p {
+            margin: 1.2rem 0;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+        
+        /* Quick Facts */
+        .quick-facts {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.2rem;
+            margin: 2rem 0;
+        }
+        
+        .fact-card {
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 8px;
+            padding: 1.2rem;
+            border-left: 3px solid var(--barca-gold);
+            backdrop-filter: blur(1px);
+        }
+        
+        .fact-card h3 {
+            color: var(--barca-red);
+            margin-top: 0;
+            font-size: 1.1rem;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(to right, var(--barca-blue), var(--barca-red));
+            color: var(--text-light);
+            text-align: center;
+            padding: 1.5rem 1rem;
+            margin-top: 2rem;
+        }
+        
+        .social-links {
+            margin: 0.8rem 0;
+        }
+        
+        .social-links a {
+            color: var(--text-light);
+            font-size: 1.3rem;
+            margin: 0 0.6rem;
+            transition: color 0.3s;
+        }
+        
+        .social-links a:hover {
+            color: var(--barca-gold);
+        }
+        
+        footer p {
+            margin: 0.4rem 0;
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .nav-container {
+                padding: 0 1rem;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                background: linear-gradient(135deg, var(--barca-red), var(--barca-blue));
+                flex-direction: column;
+                align-items: center;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.4s ease;
+                box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+            }
+            
+            .nav-links.active {
+                max-height: 500px;
+                padding: 1rem 0;
+            }
+            
+            .nav-container a {
+                width: 80%;
+                text-align: center;
+                padding: 0.8rem;
+                justify-content: center;
+            }
+            
+            .login-link {
+                margin: 0.5rem 0 0;
+                width: auto;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            .subtitle {
+                font-size: 0.8rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            header {
+                padding: 1.2rem 0 1.5rem;
+            }
+            
+            h1 {
+                font-size: 1.6rem;
+            }
+            
+            .subtitle {
+                font-size: 0.75rem;
+            }
+            
+            .club-crest {
+                width: 110px;
+            }
+            
+            h2 {
+                font-size: 1.6rem;
+            }
+            
+            #club-info {
+                padding: 1.5rem;
+            }
+            
+            .quick-facts {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .nav-container {
+                padding: 0 0.5rem;
+            }
+            
+            .nav-logo {        /* Consistent Color Variables */
+                :root {
+                    --barca-blue: #004d98;
+                    --barca-red: #a50044;
+                    --barca-gold: #ffcc00;
+                    --text-dark: #333;
+                    --text-light: #f5f5f5;
+                    --bg-light: #f8f8f8;
+                }
+                
+                /* Consistent Main Content Styling */
+                main {
+                    max-width: 1200px;
+                    margin: 2rem auto;
+                    padding: 0 1rem;
+                    color: var(--text-dark);
+                    line-height: 1.6;
+                }
+                
+                /* Consistent Section Styling */
+                .section-header {
+                    text-align: center;
+                    margin-bottom: 2.5rem;
+                }
+                
+                .section-header h2 {
+                    color: var(--barca-blue);
+                    font-size: 2.2rem;
+                    margin-bottom: 1rem;
+                    position: relative;
+                    display: inline-block;
+                }
+                
+                .section-header h2::after {
+                    content: "";
+                    position: absolute;
+                    bottom: -10px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    width: 80px;
+                    height: 4px;
+                    background: var(--barca-red);
+                }
+                
+                .section-header p {
+                    max-width: 800px;
+                    margin: 0 auto;
+                    font-size: 1.1rem;
+                }
+                
+                /* Trophy Card Styles */
+                .trophy-card {
+                    background: white;
+                    border-radius: 10px;
+                    padding: 2rem;
+                    margin-bottom: 2.5rem;
+                    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+                    border-top: 4px solid var(--barca-blue);
+                }
+                
+                .trophy-card h3 {
+                    display: flex;
+                    align-items: center;
+                    gap: 1rem;
+                    color: var(--barca-red);
+                    font-size: 1.5rem;
+                    margin-bottom: 1.5rem;
+                }
+                
+                .trophy-card img {
+                    width: 60px;
+                    height: 60px;
+                    object-fit: contain;
+                }
+                
+                /* Consistent Year Badges */
+                .year-badges {
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 0.8rem;
+                    margin: 1.5rem 0;
+                }
+                
+                .year-badge {
+                    background-color: var(--barca-blue);
+                    color: white;
+                    padding: 0.5rem 1rem;
+                    border-radius: 20px;
+                    font-size: 0.95rem;
+                    transition: all 0.3s;
+                }
+                
+                .year-badge:hover {
+                    background-color: var(--barca-red);
+                    transform: translateY(-2px);
+                }
+                
+                /* Consistent Summary Cards */
+                .summary-cards {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                    gap: 2rem;
+                    margin: 3rem 0;
+                }
+                
+                .summary-card {
+                    background: white;
+                    border-radius: 8px;
+                    padding: 1.8rem;
+                    text-align: center;
+                    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+                    border-top: 4px solid var(--barca-gold);
+                    transition: transform 0.3s;
+                }
+                
+                .summary-card:hover {
+                    transform: translateY(-5px);
+                    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+                }
+                
+                .summary-number {
+                    font-size: 3rem;
+                    font-weight: 700;
+                    color: var(--barca-blue);
+                    margin: 0.5rem 0;
+                    line-height: 1;
+                }
+                
+                .summary-label {
+                    color: var(--barca-red);
+                    font-weight: 600;
+                    font-size: 1.2rem;
+                    margin-bottom: 0.5rem;
+                }
+                
+                /* Consistent Footer Note */
+                .most-recent {
+                    font-weight: 600;
+                    color: var(--barca-red);
+                    margin-top: 0.8rem;
+                    font-size: 1.1rem;
+                }
+                
+                /* Responsive Design */
+                @media (max-width: 768px) {
+                    .section-header h2 {
+                        font-size: 1.8rem;
+                    }
+                    
+                    .trophy-card {
+                        padding: 1.5rem;
+                    }
+                    
+                    .trophy-card h3 {
+                        font-size: 1.3rem;
+                    }
+                    
+                    .summary-cards {
+                        grid-template-columns: 1fr 1fr;
+                        gap: 1.2rem;
+                    }
+                    
+                    .summary-number {
+                        font-size: 2.2rem;
+                    }
+                }
+                
+                @media (max-width: 480px) {
+                    .summary-cards {
+                        grid-template-columns: 1fr;
+                    }
+                    
+                    .year-badges {
+                        gap: 0.6rem;
+                    }
+                    
+                    .year-badge {
+                        padding: 0.4rem 0.8rem;
+                        font-size: 0.85rem;
+                    }
+                }        /* Consistent Color Variables */
+                :root {
+                    --barca-blue: #004d98;
+                    --barca-red: #a50044;
+                    --barca-gold: #ffcc00;
+                    --text-dark: #333;
+                    --text-light: #f5f5f5;
+                    --bg-light: #f8f8f8;
+                }
+                
+                /* Hero Section */
+                .hero-container {
+                    position: relative;
+                    width: 100%;
+                    height: 60vh;
+                    max-height: 600px;
+                    overflow: hidden;
+                }
+                
+                .hero-image {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    filter: brightness(0.7);
+                }
+                
+                .hero-content {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    text-align: center;
+                    color: var(--text-light);
+                    width: 100%;
+                    padding: 0 2rem;
+                    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+                }
+                
+                .hero-title {
+                    font-size: 3.5rem;
+                    font-weight: 700;
+                    margin: 0;
+                }
+                
+                /* Main Content */
+                main {
+                    max-width: 1200px;
+                    margin: 2rem auto;
+                    padding: 0 1rem;
+                    color: var(--text-dark);
+                    line-height: 1.6;
+                }
+                
+                /* Support Content */
+                .support-intro {
+                    background: white;
+                    border-radius: 12px;
+                    padding: 3rem;
+                    margin: -5rem auto 3rem;
+                    position: relative;
+                    z-index: 2;
+                    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+                    border-top: 4px solid var(--barca-blue);
+                }
+                
+                .support-intro h2 {
+                    color: var(--barca-blue);
+                    font-size: 2.2rem;
+                    text-align: center;
+                    margin-top: 0;
+                    margin-bottom: 1.5rem;
+                    position: relative;
+                }
+                
+                .support-intro h2::after {
+                    content: "";
+                    position: absolute;
+                    bottom: -10px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    width: 80px;
+                    height: 4px;
+                    background: var(--barca-red);
+                }
+                
+                .support-intro p {
+                    margin: 1.5rem 0;
+                    font-size: 1.1rem;
+                    line-height: 1.7;
+                    max-width: 800px;
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+                
+                /* Stats Grid */
+                .stats-grid {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                    gap: 2rem;
+                    margin: 3rem 0;
+                }
+                
+                .stat-card {
+                    background: white;
+                    border-radius: 10px;
+                    padding: 2rem;
+                    text-align: center;
+                    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+                    border-top: 4px solid var(--barca-gold);
+                    transition: transform 0.3s;
+                }
+                
+                .stat-card:hover {
+                    transform: translateY(-5px);
+                }
+                
+                .stat-number {
+                    font-size: 2.5rem;
+                    font-weight: 700;
+                    color: var(--barca-blue);
+                    margin: 0.5rem 0;
+                }
+                
+                .stat-label {
+                    color: var(--barca-red);
+                    font-weight: 600;
+                    font-size: 1.2rem;
+                    margin-bottom: 0.5rem;
+                }
+                
+                /* Membership Section */
+                .membership-section {
+                    background: linear-gradient(135deg, var(--barca-blue), var(--barca-red));
+                    color: white;
+                    padding: 2.5rem;
+                    border-radius: 12px;
+                    margin: 3rem 0;
+                    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+                }
+                
+                .membership-section h3 {
+                    font-size: 1.8rem;
+                    margin-top: 0;
+                    margin-bottom: 1.5rem;
+                    text-align: center;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 1rem;
+                }
+                
+                /* Fan Clubs Section */
+                .fan-clubs {
+                    background: white;
+                    border-radius: 12px;
+                    padding: 2rem;
+                    margin: 3rem 0;
+                    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+                    border-top: 4px solid var(--barca-red);
+                }
+                
+                .fan-clubs h3 {
+                    color: var(--barca-blue);
+                    font-size: 1.8rem;
+                    margin-top: 0;
+                    text-align: center;
+                }
+                
+                /* Responsive Design */
+                @media (max-width: 768px) {
+                    .hero-title {
+                        font-size: 2.5rem;
+                    }
+                    
+                    .support-intro {
+                        margin-top: -3rem;
+                        padding: 2rem;
+                    }
+                    
+                    .stat-card {
+                        padding: 1.5rem;
+                    }
+                }
+                height: 35px;
+            }
+            
+            .mobile-menu-btn {
+                padding: 0.5rem;
+                font-size: 1.2rem;
+            }
+        }
