@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>La Masia - FC Barcelona's Legendary Academy | Official Fan Site</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover La Masia, FC Barcelona's world-renowned youth academy that produced legends like Messi, Xavi, and Iniesta">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+   <link rel="stylesheet" href="styles.css">
+    <style>
+
+        
+        /* Hero Section */
+        .hero-container {
+            position: relative;
+            width: 100%;
+            height: 60vh;
+            max-height: 600px;
+            overflow: hidden;
+        }
+        
+        .hero-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.7);
+        }
+        
+        .hero-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: var(--text-light);
+            width: 100%;
+            padding: 0 2rem;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+        }
+        
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin: 0;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.8rem;
+            margin-top: 1rem;
+        }
+        
+        
+        /* Academy Section */
+        .academy-intro {
+            background: white;
+            border-radius: 12px;
+            padding: 3rem;
+            margin: -5rem auto 3rem;
+            position: relative;
+            z-index: 2;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-top: 4px solid var(--barca-blue);
+        }
+        
+        .academy-intro h2 {
+            color: var(--barca-blue);
+            font-size: 2.2rem;
+            text-align: center;
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+        
+        .academy-intro h2::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--barca-red);
+        }
+        
+        .academy-intro p {
+            margin: 1.5rem 0;
+            font-size: 1.1rem;
+            line-height: 1.7;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Philosophy Card */
+        .philosophy-card {
+            background: linear-gradient(135deg, var(--barca-blue), var(--barca-red));
+            color: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            margin: 3rem 0;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+        
+        .philosophy-card h3 {
+            font-size: 1.8rem;
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+        }
+        
+        .philosophy-card ul {
+            columns: 2;
+            column-gap: 2rem;
+            padding-left: 1.5rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .philosophy-card li {
+            margin-bottom: 1rem;
+            break-inside: avoid;
+        }
+        
+        /* Players Grid */
+        .players-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .player-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-top: 4px solid var(--barca-gold);
+        }
+        
+        .player-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+        
+        .player-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        
+        .player-info {
+            padding: 1.5rem;
+        }
+        
+        .player-info h3 {
+            color: var(--barca-red);
+            margin-top: 0;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        
+        .player-info p {
+            margin: 0.5rem 0;
+            font-size: 1rem;
+        }
+        
+        /* Modern Era Section */
+        .modern-era {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 3rem 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-top: 4px solid var(--barca-red);
+        }
+        
+        .modern-era h3 {
+            color: var(--barca-blue);
+            font-size: 1.8rem;
+            margin-top: 0;
+            text-align: center;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.3rem;
+            }
+            
+            .academy-intro {
+                margin-top: -3rem;
+                padding: 2rem;
+            }
+            
+            .philosophy-card ul {
+                columns: 1;
+            }
+            
+            .player-card img {
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header with Background Image -->
+    <header>
+        <div class="header-content">
+            <h1>FC BARCELONA</h1>
+            <div class="subtitle">Més que un club • Since 1899</div>
+            <div class="subtitle">La Masia Academy</div>
+        </div>
+    </header>
+    
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="nav-container">
+            <div class="nav-logo-container">
+                <a href="index.html" class="nav-logo-container">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/4/47/FC_Barcelona_%28crest%29.svg/1200px-FC_Barcelona_%28crest%29.svg.png" 
+                         alt="FC Barcelona Logo" 
+                         class="nav-logo">
+                </a>
+                <button class="mobile-menu-btn" aria-label="Toggle menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            
+            <div class="nav-links" id="navLinks">
+                <a href="index.html"><i class="fas fa-home"></i> Home</a>
+                <a href="trophycabinet.html"><i class="fas fa-trophy"></i> Trophy Cabinet</a>
+                <a href="support.html"><i class="fas fa-users"></i> Support</a>
+                <a href="academy.html" class="active"><i class="fas fa-graduation-cap"></i> Academy</a>
+                <a href="records.html"><i class="fas fa-star"></i> Records</a>
+                <a href="stadium.html"><i class="fas fa-stadium"></i> Stadium</a>
+                <a href="rivalry.html"><i class="fas fa-chess-knight"></i> Rivalry</a>
+                <a href="players.html"><i class="fas fa-user"></i> Players</a>
+                <a href="feedback.html" class="feedback-link"><i class="fas fa-comment-alt"></i> Feedback</a>
+                <a href="login.html" class="login-link"><i class="fas fa-sign-in-alt"></i> Login</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero-container">
+        <img src="Images/La Masia/La_masia.jpeg" alt="La Masia academy building" class="hero-image">
+        <div class="hero-content">
+            <h2 class="hero-title">La Masia</h2>
+            <p class="hero-subtitle">The Heart of Barça's Philosophy</p>
+        </div>
+    </div>
+
+    <main id="main-content">
+        <!-- Academy Introduction -->
+        <section class="academy-intro">
+            <h2>FC Barcelona's Legendary Youth Academy</h2>
+            
+            <p>La Masia, named after the Catalan farmhouse that originally housed the academy, is FC Barcelona's world-renowned youth development program. Established in 1979, it has become the gold standard for football academies worldwide, producing some of the greatest players in history.</p>
+            
+            <p>The academy is more than just a training ground - it's a philosophy that shapes both players and people. Young talents are taught the club's distinctive style of play (tiki-taka) while also receiving education and values that reflect Barcelona's "Més que un club" motto.</p>
+        </section>
+        
+        <!-- Philosophy Section -->
+        <div class="philosophy-card">
+            <h3><i class="fas fa-brain"></i> The La Masia Philosophy</h3>
+            <p>La Masia emphasizes technical skills, quick thinking, and teamwork above all else. The curriculum focuses on:</p>
+            <ul>
+                <li>Ball control and passing accuracy</li>
+                <li>Spatial awareness and positional play</li>
+                <li>Humility, respect, and sportsmanship</li>
+                <li>Academic education alongside football training</li>
+                <li>Understanding the Barça style and values</li>
+                <li>Small-sided games to develop decision-making</li>
+                <li>Progressive tactical understanding</li>
+                <li>Psychological development and resilience</li>
+            </ul>
+        </div>
+        
+        <!-- Notable Graduates -->
+        <section>
+            <h3 style="text-align: center; color: var(--barca-blue); font-size: 2rem; margin-bottom: 1.5rem;">
+                <i class="fas fa-users"></i> Notable Graduates
+            </h3>
+ 
+            
+            <div class="players-grid">
+                <div class="player-card">
+                    <a href="https://www.google.com/search?q=Lionel+Messi+Barcelona" target="_blank">
+                        <img src="Images/La Masia/LeoMessi.jpeg" alt="Lionel Messi">
+                    </a>
+                    <div class="player-info">
+                        <h3><a href="https://www.google.com/search?q=Lionel+Messi+Barcelona" target="_blank">Lionel Messi</a></h3>
+                        <p><strong>Joined at age 13</strong> from Newell's Old Boys</p>
+                        <p><strong>672 goals</strong> in 778 appearances</p>
+                        <p><strong>35 trophies</strong> with Barcelona</p>
+                        <p><strong>6 Ballon d'Or</strong> awards as Barça player</p>
+                    </div>
+                </div>
+                
+                <div class="player-card">
+                    <a href="https://www.google.com/search?q=Xavi+Hernández+Barcelona" target="_blank">
+                        <img src="Images/La Masia/Xavi.Jpeg" alt="Xavi Hernández">
+                    </a>
+                    <div class="player-info">
+                        <h3><a href="https://www.google.com/search?q=Xavi+Hernández+Barcelona" target="_blank">Xavi Hernández</a></h3>
+                        <p><strong>767 appearances</strong> (2nd most)</p>
+                        <p><strong>25 trophies</strong> won with Barcelona</p>
+                        <p><strong>85 assists</strong> in La Liga (record)</p>
+                        <p>Current Barcelona manager</p>
+                    </div>
+                </div>
+                
+                <div class="player-card">
+                    <a href="https://www.google.com/search?q=Andrés+Iniesta+Barcelona" target="_blank">
+                        <img src="Images/La Masia/Andrés_Iniesta.jpg" alt="Andrés Iniesta">
+                    </a>
+                    <div class="player-info">
+                        <h3><a href="https://www.google.com/search?q=Andrés+Iniesta+Barcelona" target="_blank">Andrés Iniesta</a></h3>
+                        <p><strong>674 appearances</strong> (3rd most)</p>
+                        <p><strong>35 trophies</strong> won with Barcelona</p>
+                        <p>Scored 2010 World Cup winning goal</p>
+                        <p>Known for his composure and vision</p>
+                    </div>
+                </div>
+                
+                <div class="player-card">
+                    <a href="https://www.google.com/search?q=Sergio+Busquets+Barcelona" target="_blank">
+                        <img src="Images/La Masia/Sergio-Busquets.jpg" alt="Sergio Busquets">
+                    </a>
+                    <div class="player-info">
+                        <h3><a href="https://www.google.com/search?q=Sergio+Busquets+Barcelona" target="_blank">Sergio Busquets</a></h3>
+                        <p><strong>La Masia graduate</strong> and midfield maestro</p>
+                        <p><strong>32 major trophies</strong> with FC Barcelona</p>
+                        <p>Key part of Barcelona's golden era (2008-2023)</p>
+                        <p>Renowned for his vision, composure, and tactical intelligence</p>
+                    </div>
+                </div>
+            
+                <div class="player-card">
+                    <a href="https://www.google.com/search?q=Pep+Guardiola+Barcelona" target="_blank">
+                        <img src="Images/La Masia/PepG.jpeg" alt="Pep Guardiola">
+                    </a>
+                    <div class="player-info">
+                        <h3><a href="https://www.google.com/search?q=Pep+Guardiola+Barcelona" target="_blank">Pep Guardiola</a></h3>
+                        <p><strong>La Masia graduate</strong> turned legendary manager</p>
+                        <p><strong>14 trophies</strong> in 4 years as manager</p>
+                        <p>Created Barcelona's greatest team (2008-2012)</p>
+                        <p>72.5% win rate (highest in club history)</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Modern Era Section -->
+            <div class="modern-era">
+                <h3><i class="fas fa-futbol"></i> The Modern Era</h3>
+                <p>Today, La Masia continues to produce exceptional talents who carry on the club's legacy:</p>
+                
+                <div class="players-grid">
+                    <div class="player-card">
+                        <a href="https://www.google.com/search?q=Gavi+Barcelona" target="_blank">
+                            <img src="Images/La Masia/Pablo.jpg" alt="Gavi">
+                        </a>
+                        <div class="player-info">
+                            <h3><a href="https://www.google.com/search?q=Gavi+Barcelona" target="_blank">Gavi</a></h3>
+                            <p><strong>Youngest debutant</strong> for Spain since 1936</p>
+                            <p><strong>Golden Boy award</strong> winner 2022</p>
+                            <p>Known for his intensity and technical ability</p>
+                        </div>
+                    </div>
+            
+                    <div class="player-card">
+                        <a href="https://www.google.com/search?q=Lamine+Yamal+Barcelona" target="_blank">
+                            <img src="Images/La Masia/Yamal.jpg" alt="Lamine Yamal">
+                        </a>
+                        <div class="player-info">
+                            <h3><a href="https://www.google.com/search?q=Lamine+Yamal+Barcelona" target="_blank">Lamine Yamal</a></h3>
+                            <p><strong>La Masia wonderkid</strong> and youngest ever Barça debutant</p>
+                            <p><strong>First team debut</strong> at 15 years old</p>
+                            <p>Known for flair, dribbling, and fearless attacking play</p>
+                        </div>
+                    </div>
+                    
+                    <div class="player-card">
+                        <a href="https://www.google.com/search?q=Pau+Cubarsí+Barcelona" target="_blank">
+                            <img src="Images/La Masia/Pau-Cubarsi.jpg" alt="Pau Cubarsí">
+                        </a>
+                        <div class="player-info">
+                            <h3><a href="https://www.google.com/search?q=Pau+Cubarsí+Barcelona" target="_blank">Pau Cubarsí</a></h3>
+                            <p><strong>La Masia gem</strong> and defensive prodigy</p>
+                            <p><strong>First team debut</strong> at 16 years old</p>
+                            <p>Praised for composure, anticipation, and ball-playing ability</p>
+                        </div>
+                    </div>
+            
+                    <div class="player-card">
+                        <a href="https://www.google.com/search?q=Alejandro+Balde+Barcelona" target="_blank">
+                            <img src="Images/La Masia/Balde.jpeg" alt="Alejandro Balde">
+                        </a>
+                        <div class="player-info">
+                            <h3><a href="https://www.google.com/search?q=Alejandro+Balde+Barcelona" target="_blank">Alejandro Balde</a></h3>
+                            <p><strong>Explosive left-back</strong> from La Masia</p>
+                            <p><strong>Breakthrough season</strong> in 2022-23</p>
+                            <p>Praised for speed, overlapping runs, and defensive awareness</p>
+                        </div>
+                    </div>
+            
+                    <div class="player-card">
+                        <a href="https://www.google.com/search?q=Fermín+López+Barcelona" target="_blank">
+                            <img src="Images/La Masia/Fermin-Lopez.jpg" alt="Fermín López">
+                        </a>
+                        <div class="player-info">
+                            <h3><a href="https://www.google.com/search?q=Fermín+López+Barcelona" target="_blank">Fermín López</a></h3>
+                            <p><strong>Dynamic midfielder</strong> with an eye for goal</p>
+                            <p><strong>Memorable pre-season</strong> goal vs Real Madrid (2023)</p>
+                            <p>Combines energy, creativity, and technical skill</p>
+                        </div>
+                    </div>
+                    
+                    <div class="player-card">
+                        <a href="https://www.google.com/search?q=Ansu+Fati+Barcelona" target="_blank">
+                            <img src="Images/La Masia/AnsuF.jpeg" alt="Ansu Fati">
+                        </a>
+                        <div class="player-info">
+                            <h3><a href="https://www.google.com/search?q=Ansu+Fati+Barcelona" target="_blank">Ansu Fati</a></h3>
+                            <p><strong>Youngest goalscorer</strong> in CL history (17)</p>
+                            <p>Inherited Messi's #10 jersey</p>
+                            <p>Known for his explosive pace and finishing</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="social-links">
+            <a href="https://www.facebook.com/fcbarcelona" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="https://twitter.com/FCBarcelona" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com/fcbarcelona/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.youtube.com/fcbarcelona" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        </div>
+        <p>&copy; 2025 FC Barcelona. All rights reserved.</p>
+        <p>Bame Kaosi Mosimakoko</p>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            document.getElementById('navLinks').classList.toggle('active');
+        });
+        
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', function() {
+                document.getElementById('navLinks').classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>
